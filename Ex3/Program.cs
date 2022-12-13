@@ -94,17 +94,17 @@ void PrintOneDimensionalArray(double[] array)
     Console.WriteLine();
 }
 // функция получения среднего арифметического каждого столбца
-double[] GetSummOfColumns(int[,] array)
+double[] GetAveargeOfColumns(int[,] array)
 {
-    double [] summOfColumns = new double[array.GetLength(1)];
+    double [] averageValueOfColumns = new double[array.GetLength(1)];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            summOfColumns[j] += Math.Round(array[i,j]/Convert.ToDouble(array.GetLength(0)), 1);
+            averageValueOfColumns[j] += Math.Round(array[i,j]/Convert.ToDouble(array.GetLength(0)), 1);
         }
     }
-    return summOfColumns;
+    return averageValueOfColumns;
 }
 
 int m = GetPositiveNumber("Введите m: ");
@@ -115,5 +115,5 @@ int [,] array = GetArray(m, n, minValue, maxValue);
 Console.WriteLine();
 PrintTwoDimensionalArray(array);
 Console.WriteLine();
-double[] summOfColumns = GetSummOfColumns(array);
-PrintOneDimensionalArray(summOfColumns);
+double[] averageValueOfColumns = GetAveargeOfColumns(array);
+PrintOneDimensionalArray(averageValueOfColumns);
